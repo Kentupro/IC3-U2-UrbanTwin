@@ -1,0 +1,119 @@
+{
+  "dataset_doi": "10.5281/zenodo.17044034",
+  "dataset_version": "1.0.0",
+  "archive_md5": "3bda941929caf4090819569399326f16",
+  "archive_sha256": "094f679df8eb75abe567b5374d88a5c3998e83be67c4ba8bfbe26cceef74030a",
+  "license": "CC-BY-4.0",
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "timezone_policy": "Unix epoch decoded as UTC; source local acquisition timezone not documented",
+  "sources": {
+    "gva": {
+      "rows_original": 5679,
+      "invalid_timestamp": 1,
+      "rows_timestamp_valid": 5678,
+      "missing_hours": 12,
+      "first_timestamp": "2024-05-31 08:00:00+00:00",
+      "last_timestamp": "2025-01-23 09:00:00+00:00",
+      "na_by_column": {
+        "SO2": 338,
+        "CO": 362,
+        "O3": 386,
+        "NOx": 410,
+        "NO": 410,
+        "NO2": 410,
+        "PM10": 170,
+        "PM2,5": 170,
+        "PM1": 170,
+        "SPL": 50,
+        "PM10_S/C": 170,
+        "PM2,5_S/C": 170,
+        "Temp_Int": 50,
+        "HR_Int": 50,
+        "HR": 170,
+        "PM1_S/C": 50,
+        "Vac_Min": 5678,
+        "rounded_datetime": 0,
+        "timestamp": 0
+      }
+    },
+    "n1": {
+      "rows_original": 5678,
+      "invalid_timestamp": 1,
+      "rows_timestamp_valid": 5677,
+      "missing_hours": 13,
+      "first_timestamp": "2024-05-31 08:00:00+00:00",
+      "last_timestamp": "2025-01-23 09:00:00+00:00",
+      "na_by_column": {
+        "Temp": 0,
+        "HR": 0,
+        "PM1": 0,
+        "PM2_5": 0,
+        "PM10": 0,
+        "VOC": 0,
+        "CH2O": 0,
+        "CO2": 0,
+        "CO": 0,
+        "O3": 0,
+        "NO2": 0,
+        "rounded_datetime": 0,
+        "timestamp": 0
+      }
+    },
+    "n2": {
+      "rows_original": 5679,
+      "invalid_timestamp": 1,
+      "rows_timestamp_valid": 5678,
+      "missing_hours": 12,
+      "first_timestamp": "2024-05-31 08:00:00+00:00",
+      "last_timestamp": "2025-01-23 09:00:00+00:00",
+      "na_by_column": {
+        "Temp": 0,
+        "HR": 0,
+        "PM1": 0,
+        "PM2_5": 0,
+        "PM10": 0,
+        "VOC": 0,
+        "CH2O": 0,
+        "CO2": 0,
+        "CO": 0,
+        "O3": 0,
+        "NO2": 0,
+        "rounded_datetime": 0,
+        "timestamp": 0
+      }
+    }
+  },
+  "expected_hourly_grid": 5690,
+  "aligned_rows": 5665,
+  "valid_pm_pairs": 5495,
+  "unusable_grid_hours": 195,
+  "rh_above_100_timestamp_valid_n1": 2640,
+  "rh_above_100_valid_pm_pairs": 2572,
+  "rh_above_100_pct_valid_pm_pairs": 46.80618744313012,
+  "gva_hr_equals_pm1": true,
+  "splits": {
+    "train": {
+      "n_pm_pairs": 3290,
+      "n_rh_valid": 2048,
+      "first": "2024-05-31 08:00:00+00:00",
+      "last": "2024-10-19 23:00:00+00:00"
+    },
+    "validation": {
+      "n_pm_pairs": 1104,
+      "n_rh_valid": 233,
+      "first": "2024-10-20 00:00:00+00:00",
+      "last": "2024-12-06 23:00:00+00:00"
+    },
+    "test": {
+      "n_pm_pairs": 1101,
+      "n_rh_valid": 642,
+      "first": "2024-12-07 00:00:00+00:00",
+      "last": "2025-01-23 09:00:00+00:00"
+    }
+  },
+  "train_end_exclusive": "2024-10-20 00:00:00+00:00",
+  "validation_end_exclusive": "2024-12-07 00:00:00+00:00",
+  "models_fitted": 0
+}

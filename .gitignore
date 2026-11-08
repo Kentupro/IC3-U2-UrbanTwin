@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/*
+!data/raw/.gitkeep
+outputs/*.csv
+outputs/*.png
+.DS_Store
