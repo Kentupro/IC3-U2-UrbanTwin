@@ -2,7 +2,7 @@ import sys
 import unittest
 from pathlib import Path
 import pandas as pd
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pipeline import load_csv, make_pairs, split_labels
 
 
@@ -30,3 +30,4 @@ class PipelineChecks(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

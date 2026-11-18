@@ -1,0 +1,88 @@
+{
+  "stage": "CP2",
+  "source_cp1_commit": "4a8175950c0beea91e7955943b64a75e32f558ae",
+  "dataset_doi": "10.5281/zenodo.17044034",
+  "dataset_version": "1.0.0",
+  "archive_sha256": "094f679df8eb75abe567b5374d88a5c3998e83be67c4ba8bfbe26cceef74030a",
+  "script_sha256": "8fe80e4152f76c526c51bb342f15565c53f68ef021fce2caef2e46075555168a",
+  "pipeline_sha256": "51833a9c8d600aac6f0c1de946dc049cc8d5e42fbcff4ef6135b5dae50409c2b",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "scikit_learn": "1.8.0",
+  "features": {
+    "R0": [
+      "pm25_raw"
+    ],
+    "R1": [
+      "pm25_raw",
+      "temperature"
+    ]
+  },
+  "rf_parameters": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 5,
+    "max_features": 1.0,
+    "bootstrap": true,
+    "n_jobs": 1
+  },
+  "seeds": [
+    42,
+    7,
+    21,
+    84,
+    123
+  ],
+  "train_rows": 3290,
+  "validation_rows": 1104,
+  "test_rows_reserved": 1101,
+  "train_end_exclusive": "2024-10-20 00:00:00+00:00",
+  "validation_end_exclusive": "2024-12-07 00:00:00+00:00",
+  "test_scored": false,
+  "test_used_for_selection": false,
+  "target_imputation": false,
+  "predictions_clipped": false,
+  "hyperparameter_search": false,
+  "metric_aggregation": "RF table: mean of per-seed metrics; sd is sample SD, not CI",
+  "representation_selection": "Minimum mean RF validation MAE; tie goes to R0",
+  "selected_representation": "R1",
+  "selected_rf_validation_mae": 4.317356627368909,
+  "relative_mae_reduction_vs_raw_pct": 61.38663600186127,
+  "delta_mae_R1_minus_R0": {
+    "estimate": -0.48103926647596534,
+    "ci95_low": -0.8731644329798548,
+    "ci95_high": -0.08026009382875389,
+    "days": 48,
+    "bootstrap_repetitions": 2000,
+    "bootstrap_seed": 2026
+  },
+  "delta_mae_rf_minus_raw": {
+    "R0": {
+      "estimate": -6.382594779687269,
+      "ci95_low": -8.042427423696845,
+      "ci95_high": -4.618983398926342,
+      "days": 48,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 2026
+    },
+    "R1": {
+      "estimate": -6.8636340461632335,
+      "ci95_low": -8.826201115008596,
+      "ci95_high": -4.70411420237122,
+      "days": 48,
+      "bootstrap_repetitions": 2000,
+      "bootstrap_seed": 2026
+    }
+  },
+  "threshold_proposal": {
+    "seed": 42,
+    "valid_validation_days": 46,
+    "q95_daily_mae_ug_m3": 17.62715422884304,
+    "consecutive_calendar_days": 3,
+    "minimum_hourly_pairs_per_day": 18,
+    "missing_day_breaks_streak": true,
+    "status": "Exploratory calibration on validation; no detector/test validation yet"
+  },
+  "baseline_fit_count": 12
+}

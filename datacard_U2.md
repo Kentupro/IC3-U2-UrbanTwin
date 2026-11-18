@@ -67,6 +67,6 @@ Este o propunere de protocol pentru următoarea etapă, nu un prag numeric deja 
 
 ## 8. Reproductibilitate și limite
 
-Comandă: python src/pipeline.py . Trei verificări automate: carantinarea timestamp-urilor absente, păstrarea PM când RH este invalidă și limitele splitului. Auditul include hash-uri, versiuni Python/pachete și dimensiunile subseturilor. Pipeline-ul rulează pe date reale; modelele și detectorul de drift nu sunt încă implementate la CP1.
+Comandă CP1: python pipeline.py . Trei verificări automate: carantinarea timestamp-urilor absente, păstrarea PM când RH este invalidă și limitele splitului. Auditul include hash-uri, versiuni Python/pachete și dimensiunile subseturilor. Pipeline-ul rulează pe date reale; modelele și detectorul de drift nu sunt încă implementate la CP1.
 Limită majoră: un nod, un sit și mai puțin de un an; nu se separă complet driftul de schimbarea sezonului. Pentru CP4, un caz românesc rămâne opțional și condiționat de o pereche senzor–stație cu proximitate și suprapunere verificabile. Node 2 testează transferul între dispozitive, nu transferul de oraș.
-Repo: cod pregătit local pentru IC3-U2-UrbanTwin; URL-ul real se adaugă după publicarea de către autor. Nu există încă un link GitHub verificat în acest livrabil.
+Repo: https://github.com/Kentupro/IC3-U2-UrbanTwin . Această fișă documentează CP1; protocolul și rezultatele CP2 sunt în CP2_U2.md.
