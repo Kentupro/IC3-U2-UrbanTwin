@@ -1,0 +1,56 @@
+{
+  "stage": "CP3",
+  "source_cp2_commit": "721152704cf033d237cda2ea9743bb2e86bf98ac",
+  "protocol_sha256": "31e3c5f53e0e467e7e76b37cb0ce5edb58cbde995c6af1ba16899db7d1b34c43",
+  "script_sha256": "0803bf08f9576512379ac674d548bf9f7a0f8300ffa43c71b6d9e23b073b92de",
+  "archive_sha256": "094f679df8eb75abe567b5374d88a5c3998e83be67c4ba8bfbe26cceef74030a",
+  "software": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.8.0"
+  },
+  "train_rows": 3290,
+  "validation_rows": 1104,
+  "test_rows": 1101,
+  "train_last": "2024-10-19 23:00:00+00:00",
+  "test_first": "2024-12-07 00:00:00+00:00",
+  "test_last": "2025-01-23 09:00:00+00:00",
+  "test_scored": true,
+  "test_used_for_fit": false,
+  "test_used_for_selection": false,
+  "refit_on_validation": false,
+  "hyperparameter_search": false,
+  "cp2_validation_reproduced": true,
+  "primary_method": "RF_R1",
+  "seeds": [
+    42,
+    7,
+    21,
+    84,
+    123
+  ],
+  "bootstrap": {
+    "method": "Non-circular moving blocks of consecutive UTC calendar days",
+    "block_days": 3,
+    "repetitions": 3000,
+    "seed": 20261122,
+    "confidence": 0.95,
+    "paired": true,
+    "aggregation": "RF: mean of per-seed metrics within each bootstrap replicate, not an ensemble of predictions",
+    "scope": "Conditional on fixed training data and fitted models; does not capture training or model-selection uncertainty"
+  },
+  "test_calendar_days": 48,
+  "result_rows": 16,
+  "verification_monitoring": {
+    "seed": 42,
+    "threshold_ug_m3": 17.62715422884304,
+    "eligible_test_days": 45,
+    "exceedance_days": 1,
+    "alert_days": 0,
+    "alert_dates": [],
+    "status": "Reference-based verification flags, not labeled drift detection"
+  },
+  "relative_test_mae_reduction_vs_raw_pct": 69.76230455416533,
+  "fitted_model_count": 12
+}
