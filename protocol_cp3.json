@@ -1,0 +1,97 @@
+{
+  "stage": "CP3",
+  "source_cp2_commit": "721152704cf033d237cda2ea9743bb2e86bf98ac",
+  "dataset_doi": "10.5281/zenodo.17044034",
+  "dataset_version": "1.0.0",
+  "archive_sha256": "094f679df8eb75abe567b5374d88a5c3998e83be67c4ba8bfbe26cceef74030a",
+  "primary_method": "RF_R1",
+  "primary_metric": "MAE",
+  "representations": {
+    "R0": [
+      "pm25_raw"
+    ],
+    "R1": [
+      "pm25_raw",
+      "temperature"
+    ]
+  },
+  "rf_parameters": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 5,
+    "max_features": 1.0,
+    "bootstrap": true,
+    "n_jobs": 1
+  },
+  "seeds": [
+    42,
+    7,
+    21,
+    84,
+    123
+  ],
+  "baselines": [
+    "raw",
+    "train_mean",
+    "linear_R0",
+    "linear_R1",
+    "RF_R0"
+  ],
+  "train_end_exclusive": "2024-10-20 00:00:00+00:00",
+  "test_start_inclusive": "2024-12-07 00:00:00+00:00",
+  "fit_policy": "Train only: retain original CP2 fit period; no refit on validation",
+  "test_policy": "Score the reserved test once under the frozen protocol; no tuning or new model selection from test",
+  "expected_train_rows": 3290,
+  "expected_validation_rows": 1104,
+  "expected_test_rows": 1101,
+  "bootstrap": {
+    "method": "Non-circular moving blocks of consecutive UTC calendar days",
+    "block_days": 3,
+    "repetitions": 3000,
+    "seed": 20261122,
+    "confidence": 0.95,
+    "paired": true,
+    "aggregation": "RF: mean of per-seed metrics within each bootstrap replicate, not an ensemble of predictions",
+    "scope": "Conditional on fixed training data and fitted models; does not capture training or model-selection uncertainty"
+  },
+  "paired_comparisons": {
+    "method": "RF_R1",
+    "baselines": [
+      "raw",
+      "linear_R0",
+      "RF_R0"
+    ],
+    "metrics": [
+      "MAE",
+      "RMSE"
+    ]
+  },
+  "alert_rule": {
+    "model": "RF_R1",
+    "seed": 42,
+    "threshold_ug_m3": 17.62715422884304,
+    "threshold_source": "CP2 validation 95th percentile, 46 eligible UTC days",
+    "minimum_pairs_per_day": 18,
+    "consecutive_calendar_days": 3,
+    "comparison": ">",
+    "missing_or_ineligible_day_breaks_streak": true,
+    "requires_colocated_reference": true,
+    "no_labeled_drift_ground_truth": true
+  },
+  "cp2_source_sha256": {
+    "pipeline.py": "51833a9c8d600aac6f0c1de946dc049cc8d5e42fbcff4ef6135b5dae50409c2b",
+    "cp2.py": "8fe80e4152f76c526c51bb342f15565c53f68ef021fce2caef2e46075555168a",
+    "results/cp2/manifest.json": "de77c982322bb585255b02affc109191b7cdd9a8ddcb0da2b3c9eb2e55b81db8"
+  },
+  "prediction_clipping": false,
+  "target_imputation": false,
+  "outlier_removal_based_on_error": false,
+  "hyperparameter_search": false,
+  "software_versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit_learn": "1.8.0"
+  },
+  "evaluation_source_sha256": "0803bf08f9576512379ac674d548bf9f7a0f8300ffa43c71b6d9e23b073b92de"
+}
